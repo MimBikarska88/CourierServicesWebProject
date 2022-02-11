@@ -1,6 +1,8 @@
 package com.example.orders;
 
+import com.example.orders.Courier.CourierService;
 import com.example.orders.Courier.CourierServiceImpl;
+import com.example.orders.Order.OrderService;
 import com.example.orders.Order.OrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,9 +17,9 @@ import java.lang.reflect.Method;
 @RequestMapping("Couriers")
 public class CourierController {
     @Autowired
-    private CourierServiceImpl courierService;
+    private CourierService courierService;
     @Autowired
-    private OrderServiceImpl orderService;
+    private OrderService orderService;
 
     @GetMapping("")
     public String Couriers(){

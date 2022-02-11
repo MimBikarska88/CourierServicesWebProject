@@ -1,12 +1,16 @@
 package com.example.orders;
 
 import com.example.orders.Client.Client;
+import com.example.orders.Client.ClientService;
 import com.example.orders.Client.ClientServiceImpl;
 import com.example.orders.Courier.Courier;
+import com.example.orders.Courier.CourierService;
 import com.example.orders.Courier.CourierServiceImpl;
 import com.example.orders.Office.Office;
+import com.example.orders.Office.OfficeService;
 import com.example.orders.Office.OfficeServiceImpl;
 import com.example.orders.Order.Order;
+import com.example.orders.Order.OrderService;
 import com.example.orders.Order.OrderServiceImpl;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +27,17 @@ import javax.servlet.http.HttpSession;
 //must invalidate all session attributes in the when the logout button is pressed
 public class ClientController {
     @Autowired
-    private ClientServiceImpl clientService;
+    private ClientService clientService;
+
     @Autowired
-    private OfficeServiceImpl officeService;
+    private OfficeService officeService;
+
     @Autowired
-    private OrderServiceImpl orderService;
+    private OrderService orderService;
+
     @Autowired
-    private CourierServiceImpl courierService;
+    private CourierService courierService;
+
     @GetMapping("")
     public ModelAndView Clients(){
         var mav = new ModelAndView();
@@ -42,8 +50,6 @@ public class ClientController {
         mav.setViewName("ClientActivity/SignIn");
         return mav;
     }
-
-
 
     /*
     * the url was changed from /Clients/SignedInAccount to

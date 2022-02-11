@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdministrationController {
 
     @Autowired
-    private CityServiceImpl cityService;
+    private CityService cityService;
     @Autowired
     private OfficeService officeService;
 
