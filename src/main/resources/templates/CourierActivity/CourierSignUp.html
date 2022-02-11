@@ -22,11 +22,19 @@
 </nav>
 <body>
 <div class="d-flex justify-content-center">
-    <form th:action="@{/Couriers/SignedInCourierAccount}" method="post" class="mx-5 my-5 w-75 shadow p-3 mb-5 bg-white rounded animate__animated animate__fadeInUp ">
+        <form th:action="@{/Couriers/Apply}" method="post" class="mx-5 my-5 w-75 shadow p-3 mb-5 bg-white rounded animate__animated animate__fadeInUp ">
 
         <div class="form-group font-weight-bolder ">
-            <label for="formGroupExampleInput">Phone Number</label>
+            <label for="formGroupExampleInput">First Name</label>
             <input name = "phone" type="text" class="form-control" id="formGroupExampleInput">
+        </div>
+        <div class="form-group font-weight-bolder ">
+            <label for="formGroupExampleInput0">Last Name</label>
+            <input name = "phone" type="text" class="form-control" id="formGroupExampleInput0">
+        </div>
+        <div class="form-group font-weight-bolder ">
+            <label for="formGroupExampleInput1">Phone Number</label>
+            <input name = "phone" type="text" class="form-control" id="formGroupExampleInput1">
         </div>
         <div class="form-group font-weight-bolder">
             <label for="formGroupExampleInput2">Password</label>
