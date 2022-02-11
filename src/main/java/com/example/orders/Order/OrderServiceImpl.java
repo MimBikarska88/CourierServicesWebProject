@@ -46,4 +46,9 @@ public class OrderServiceImpl implements OrderService {
         order.setNumber();
         orderRepository.save(order);
     }
+
+    @Override
+    public String GetOrderNumberById(Integer Id) {
+        return orderRepository.findById(Id).get().getNumber();
+    }
 }

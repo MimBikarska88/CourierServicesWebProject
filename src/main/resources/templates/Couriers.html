@@ -11,16 +11,16 @@
 <body>
 <nav class="nav nav-pills nav-fill  navbar-light" style="background-color: #e3f2fd;">
 
-    <a class="nav-item nav-link  " th:href="@{index}">Home</a>
-    <a class="nav-item nav-link" th:href="@{CourierAdministration}">Courier Administrators</a>
-    <a class="nav-item nav-link" th:href="@{Clients}">Clients</a>
+    <a class="nav-item nav-link  " th:href="@{/index}">Home</a>
+    <a class="nav-item nav-link" th:href="@{/CourierAdministration}">Courier Administrators</a>
+    <a class="nav-item nav-link" th:href="@{/Clients}">Clients</a>
     <a class="nav-item nav-link active"style="background-color: palevioletred" th:href="@{Couriers}">Couriers</a>
 
 </nav>
 <div class="m-5">
     <ul class="list-group list-group-flush list-inline text-center mt-5 mb-5 pt-5">
-        <a th:href="@{Couriers/SignUp}" class="list-group-item list-group-item-action list-group-item-light">Log in and start the shift</a>
-        <a th:href="@{Clients/SignIn}" class="list-group-item list-group-item-action list-group-item-light">Apply now!</a>
+        <a th:href="@{Couriers/CourierLogIn}" class="list-group-item list-group-item-action list-group-item-light">Log in and start the shift</a>
+        <a th:href="@{Couriers/SignUp}" class="list-group-item list-group-item-action list-group-item-light">Apply now!</a>
     </ul>
 </div>
 </body>

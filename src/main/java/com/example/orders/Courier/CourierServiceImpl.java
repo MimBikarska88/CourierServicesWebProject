@@ -17,11 +17,10 @@ public class CourierServiceImpl implements CourierService{
     @Autowired
     private OrderRepository orderRepository;
     @Override
-    public void RegisterNewCourier(Courier courier) throws Exception {
-        Message message = null;
+    public void RegisterNewCourier(String firstName, String lastName, String phoneNumber, String loginDetails) throws Exception {
         try{
-            if(!courierRepository.existsByPhoneNumber(courier.getPhoneNumber())){
-                courierRepository.save(courier);
+            if(!courierRepository.existsByPhoneNumber(phoneNumber)){
+                courierRepository.save(new Courier(firstName,lastName,phoneNumber,loginDetails));
             }else{
                 throw new Exception("Courier with such credentials exists on our system already!");
             }
@@ -67,7 +66,16 @@ public class CourierServiceImpl implements CourierService{
     }
 
     @Override
-    public Courier LogInWithPhoneNumberAndLoginDetails(String phoneNumber, String loginDetails) {
-        return courierRepository.findCourierByPhoneNumberAndLoginDetails(phoneNumber,loginDetails);
+    public Courier LogInWithPhoneNumberAndLoginDetails(String phoneNumber, String loginDetails) throws Exception {
+        if(courierRepository.existsByPhoneNumberAndLoginDetails(phoneNumber,loginDetails)){
+            return courierRepository.findCourierByPhoneNumberAndLoginDetails(phoneNumber,loginDetails);
+        }else{
+            throw  new Exception("Wrong details!");
+        }
+    }
+
+    @Override
+    public Courier GetCourierById(Integer id) {
+        return courierRepository.findById(id).get();
     }
 }

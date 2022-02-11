@@ -10,4 +10,5 @@ public interface OrderService {
     public Order getOrderByOrderNumber(String orderNumber);
     public void ChangeStatus(String orderNumber);
     public void GenerateOrderNumber(Integer orderId);
+    public String GetOrderNumberById(Integer Id);
 }
